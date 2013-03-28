@@ -1,0 +1,20 @@
+*mediummode.txt* Like hard mode, but easier
+
+Authors: Keith Barrette <https://github.com/kbarrette/>,
+         Simon Hojberg <https://github.com/hojberg/>
+
+Plugin homepage: <https://github.com/kbarrette/mediummode/>
+
+===============================================================================
+CONTENTS                                                  *mediummode-contents*
+
+    1. Introduction.............|mediummode-introduction|
+
+===============================================================================
+1. INTRODUCTION                                       *mediummode-introduction*
+
+So hard mode sounds like a good idea - character-wise navigation is inefficient
+and slow.  But, sometimes you REALLY just want to go up to the previous line,
+or one character over.  Enter medium mode - you can use character-wise
+navigation, but only a little bit.
+
