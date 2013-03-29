@@ -47,6 +47,7 @@ endfunction
 " Reset the motion count
 function! s:MediumModeResetCount()
   let s:motion_count = 0
+  echo ''
 endfunction
 
 " Enable/disable functions
