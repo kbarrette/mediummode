@@ -40,6 +40,7 @@ function! s:MediumModeMotion(motion)
     return a:motion
   else
     echo g:mediummode_disallowed_message
+    return ''
   endif
 endfunction
 
