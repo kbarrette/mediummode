@@ -1,7 +1,6 @@
 *mediummode.txt*            Like hard mode, but easier             *mediummode*
 
-Authors: Keith Barrette <https://github.com/kbarrette/>,
-         Simon Hojberg <https://github.com/hojberg/>
+Author: Keith Barrette <https://github.com/kbarrette/>
 
 Plugin homepage: <https://github.com/kbarrette/mediummode/>
 
