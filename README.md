@@ -1,7 +1,20 @@
 mediummode
 ==========
+Inspired by [hard mode](https://github.com/wikitopian/hardmode) but less...
+hard.
 
-Inspired by [hard mode](https://github.com/wikitopian/hardmode) but less...hard.
+Medium mode is a Vim plugin that allows character-wise motion, but only up to a
+point.
 
-Medium mode is a vim plugin that allows character-wise motion, but only up to a point.
+Usage
+-----
+Medium mode proves a `MediumModeToggle` command to toggle medium mode on and off.
 
+Out of the box, medium mode will be automatically turned on and configured to
+listen to the usual Vim motion keys.  See the documentation for configuration
+instructions
+
+Installation
+------------
+[Vundle](https://github.com/gmarik/vundle) or
+[Pathogen](https://github.com/tpope/vim-pathogen) is recommended

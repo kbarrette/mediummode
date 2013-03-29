@@ -1,4 +1,4 @@
-*mediummode.txt* Like hard mode, but easier
+*mediummode.txt*            Like hard mode, but easier             *mediummode*
 
 Authors: Keith Barrette <https://github.com/kbarrette/>,
          Simon Hojberg <https://github.com/hojberg/>
@@ -6,15 +6,82 @@ Authors: Keith Barrette <https://github.com/kbarrette/>,
 Plugin homepage: <https://github.com/kbarrette/mediummode/>
 
 ===============================================================================
-CONTENTS                                                  *mediummode-contents*
+CONTENTS~
+                                                          *mediummode-contents*
 
     1. Introduction.............|mediummode-introduction|
+    2. Usage....................|mediummode-usage|
+    3. Configuration............|mediummode-configuration|
+
 
 ===============================================================================
-1. INTRODUCTION                                       *mediummode-introduction*
+1. INTRODUCTION~
+                                                      *mediummode-introduction*
 
 So hard mode sounds like a good idea - character-wise navigation is inefficient
 and slow.  But, sometimes you REALLY just want to go up to the previous line,
 or one character over.  Enter medium mode - you can use character-wise
 navigation, but only a little bit.
 
+
+===============================================================================
+2. USAGE~
+                                                             *mediummode-usage*
+
+Medium mode will remap the usual Vim motion keys, and can be enabled and
+disabled off with the commands:
+>
+  :MediumModeEnable
+  :MediumModeDisable
+  :MediumModeToggle
+<
+
+
+===============================================================================
+3. CONFIGURATION~
+                                                     *mediummode-configuration*
+
+Medium mode provides the following configuration variables:
+
+-------------------------------------------------------------------------------
+>
+  g:mediummode_enabled
+<
+  Set to 0 to turn off medium mode by default
+
+  Default: 1
+
+-------------------------------------------------------------------------------
+>
+  g:mediummode_allowed_character_motions
+<
+  Set the number of consecutive character motions that are allowed before
+  medium mode steps in
+
+  Default: 2
+
+-------------------------------------------------------------------------------
+>
+  g:mediummode_disallowed_message
+<
+  Set the message that medium mode will display when a motion is denied
+
+  Default: "You can do better than that!"
+
+-------------------------------------------------------------------------------
+>
+  g:mediummode_motion_keys
+<
+  Set the list of motion keys that medium mode will remap
+
+  Default: ['h', 'j', 'k', 'l', '<Left>', '<Right>', '<Up>', '<Down>']
+
+-------------------------------------------------------------------------------
+>
+  g:mediummode_reset_events
+<
+  Set the list of autocmd events that will reset medium mode's motion count
+
+  Default: ['InsertLeave', 'BufEnter', 'CursorHold']
+
+===============================================================================
