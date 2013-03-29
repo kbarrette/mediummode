@@ -85,7 +85,7 @@ function! s:MediumModeToggle()
 endfunction
 
 " Command set up
-command! -nargs=0 MediumModeEnable call s:MediumModeDisable()
+command! -nargs=0 MediumModeEnable call s:MediumModeEnable()
 command! -nargs=0 MediumModeDisable call s:MediumModeDisable()
 command! -nargs=0 MediumModeToggle call s:MediumModeToggle()
 
