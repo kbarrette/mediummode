@@ -52,30 +52,34 @@ endfunction
 
 " Enable/disable functions
 function! s:MediumModeEnable()
-  for key in g:mediummode_motion_keys
-    exec 'nnoremap <expr>' key '<SID>MediumModeMotion("' . key . '")'
-    exec 'vnoremap <expr>' key '<SID>MediumModeMotion("' . key . '")'
-  endfor
+  if !g:mediummode_enabled
+    for key in g:mediummode_motion_keys
+      exec 'nnoremap <expr>' key '<SID>MediumModeMotion("' . key . '")'
+      exec 'vnoremap <expr>' key '<SID>MediumModeMotion("' . key . '")'
+    endfor
 
-  augroup MediumMode
-    autocmd!
-    exec 'autocmd' join(g:mediummode_reset_events, ',') '*' 'call <SID>MediumModeResetCount()'
-  augroup END
+    augroup MediumMode
+      autocmd!
+      exec 'autocmd' join(g:mediummode_reset_events, ',') '*' 'call <SID>MediumModeResetCount()'
+    augroup END
 
-  let g:mediummode_enabled = 1
+    let g:mediummode_enabled = 1
+  endif
 endfunction
 
 function! s:MediumModeDisable()
-  for key in g:mediummode_motion_keys
-    exec 'nunmap' key
-    exec 'vunmap' key
-  endfor
+  if g:mediummode_enabled
+    for key in g:mediummode_motion_keys
+      exec 'nunmap' key
+      exec 'vunmap' key
+    endfor
 
-  augroup MediumMode
-    autocmd!
-  augroup END
+    augroup MediumMode
+      autocmd!
+    augroup END
 
-  let g:mediummode_enabled = 0
+    let g:mediummode_enabled = 0
+  endif
 endfunction
 
 function! s:MediumModeToggle()
