@@ -51,8 +51,8 @@ function! s:MediumModeResetCount()
 endfunction
 
 " Enable/disable functions
-function! s:MediumModeEnable()
-  if !g:mediummode_enabled
+function! s:MediumModeEnable(...)
+  if !g:mediummode_enabled || (a:0 > 0 && a:1)
     for key in g:mediummode_motion_keys
       exec 'nnoremap <expr>' key '<SID>MediumModeMotion("' . key . '")'
       exec 'vnoremap <expr>' key '<SID>MediumModeMotion("' . key . '")'
@@ -97,6 +97,6 @@ command! -nargs=0 MediumModeToggle call s:MediumModeToggle()
 
 " Initialize
 if g:mediummode_enabled
-  call s:MediumModeEnable()
+  call s:MediumModeEnable(1)
 endif
 
