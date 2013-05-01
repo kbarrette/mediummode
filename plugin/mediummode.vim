@@ -46,8 +46,10 @@ endfunction
 
 " Reset the motion count
 function! s:MediumModeResetCount()
+  if s:motion_count == g:mediummode_allowed_motions
+    echo ''
+  endif
   let s:motion_count = 0
-  echo ''
 endfunction
 
 " Enable/disable functions
