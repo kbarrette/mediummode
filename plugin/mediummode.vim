@@ -39,15 +39,28 @@ function! s:MediumModeMotion(motion)
     let s:motion_count += 1
     return a:motion
   else
-    echo g:mediummode_disallowed_message
-    return ''
+    if !exists('s:mm_curchar')
+      let s:mm_curchar = {'line': line('.'), 'col': col('.')}
+      echo g:mediummode_disallowed_message
+      return ''
+    " Check if you're still at the same position
+    elseif s:mm_curchar.line == line('.') && s:mm_curchar.col == col('.')
+      echo g:mediummode_disallowed_message
+      return ''
+    else
+      " if not then allow the command and reset the count
+      call s:MediumModeResetCount()
+      return a:motion
+    endif
   endif
 endfunction
 
 " Reset the motion count
 function! s:MediumModeResetCount()
   let s:motion_count = 0
-  echo ''
+  if exists('s:mm_curchar')
+      unlet s:mm_curchar
+  endif
 endfunction
 
 " Enable/disable functions
@@ -99,4 +112,3 @@ command! -nargs=0 MediumModeToggle call s:MediumModeToggle()
 if g:mediummode_enabled
   call s:MediumModeEnable(1)
 endif
-
