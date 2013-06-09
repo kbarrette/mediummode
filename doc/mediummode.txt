@@ -52,7 +52,7 @@ Medium mode provides the following configuration variables:
 
 -------------------------------------------------------------------------------
 >
-  g:mediummode_allowed_character_motions
+  g:mediummode_allowed_motions
 <
   Set the number of consecutive character motions that are allowed before
   medium mode steps in
